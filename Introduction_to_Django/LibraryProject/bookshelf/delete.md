@@ -1,4 +1,3 @@
-
 ---
 
 ### 📄 `delete.md`
@@ -7,10 +6,12 @@
 # 🔴 DELETE Operation
 
 ## 🎯 Project Instruction
-> "Delete the book you created and confirm the deletion by trying to retrieve all books again."
+> "Delete the Book instance with the title 'Nineteen Eighty-Four'."
 
 ## 💻 Command Used in Django Shell
 
 ```python
-retrieved.delete()
-Book.objects.all()
+from bookshelf.models import Book
+book = Book.objects.get(title="Nineteen Eighty-Four")
+book.delete()
+```

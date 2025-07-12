@@ -1,4 +1,3 @@
-
 ---
 
 ### 📄 `update.md`
@@ -7,11 +6,13 @@
 # 🟡 UPDATE Operation
 
 ## 🎯 Project Instruction
-> "Update the title of '1984' to 'Nineteen Eighty-Four' and save the changes."
+> "Update the title of the Book instance with the title '1984' to 'Nineteen Eighty-Four'."
 
 ## 💻 Command Used in Django Shell
 
 ```python
-retrieved.title = "Nineteen Eighty-Four"
-retrieved.save()
-print(retrieved.title)
+from bookshelf.models import Book
+book = Book.objects.get(title="1984")
+book.title = "Nineteen Eighty-Four"
+book.save()
+```
